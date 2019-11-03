@@ -1,0 +1,276 @@
+	<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="codepixer">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Bitcoin</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="css/linearicons.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/magnific-popup.css">
+			<link rel="stylesheet" href="css/nice-select.css">					
+			<link rel="stylesheet" href="css/animate.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.css">
+			<link rel="stylesheet" href="css/main.css">
+		</head>
+
+		<body>
+
+			  <header id="header" id="home">
+			    <div class="container">
+			    	<div class="row align-items-center justify-content-between d-flex">
+				      <div id="logo">
+				        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+				      </div>
+				      <nav id="nav-menu-container">
+				        <ul class="nav-menu">
+				          <li class="menu-active"><a href="#home">Home</a></li>
+				          <li><a href="#convert">Convert</a></li>
+				          <li><a href="#price">Price</a></li>
+<!--				          <li class="menu-has-children"><a href="">Pages</a>-->
+<!--				            <ul>-->
+<!--				              <li><a href="generic.html">Generic</a></li>-->
+<!--				              <li><a href="elements.html">Elements</a></li>-->
+<!--				            </ul>-->
+				          </li>
+				        </ul>
+				      </nav><!-- #nav-menu-container -->		    		
+			    	</div>
+			    </div>
+			  </header><!-- #header -->
+
+			<!-- start banner Area -->
+			<section class="banner-area relative" id="home">
+				<div class="overlay overlay-bg"></div>		
+				<div class="container">
+					<div class="row fullscreen d-flex align-items-center justify-content-start">
+						<div class="banner-content col-lg-12 col-md-12">
+							<h5 class="text-white text-uppercase">Currently Item Cost</h5>
+							<h1 id="curPrice" class="text-uppercase">
+								$12,356
+							</h1>
+							<script>
+								function getParams() {
+									var params = {"price": "$100"},
+										pairs = document.URL.split('?')
+											   .pop()
+											   .split('&');
+									for (var i = 0, p; i < pairs.length; i++) {
+										   p = pairs[i].split('=');
+										   params[ p[0] ] =  p[1];
+									}
+									return params;
+								}
+
+								params = getParams();
+								price = unescape(params["price"]);
+								document.getElementById("curPrice").innerHTML = price;
+
+
+							</script>
+
+
+							<p id="demo" class="text-white pt-20 pb-20">
+								The current date is
+
+							</p>
+							<script>
+								// document.write("Hello World");
+								//
+								//
+								//
+								//    var data="hello";
+								//    console.log("bye");
+								//
+								//    document.write(data);
+								//    $.get("http://127.0.0.1:8080/crazy", function(response) {
+								// 		data = response;
+								// 		console.log(data);
+								//    }).error(function(){
+								//   console.log("Sorry could not proceed");
+								//   print("error");
+								// });
+								//    document.write(data);
+								var xhttp = new XMLHttpRequest();
+
+								xhttp.open("GET", "http://127.0.0.1:8080/merchantDonate", false);
+								xhttp.send();
+								document.getElementById("demo").innerHTML = "Donate Your money";
+							</script>
+
+							<a onclick="donatePopup()" class="primary-btn header-btn text-uppercase">Donate to TeamTrees</a>
+						</div>
+						<script type="text/javascript">
+							function donatePopup() {
+								var w = window.open('', '', 'width=400,height=400,resizeable,scrollbars');
+
+								var xhttp = new XMLHttpRequest();
+
+								xhttp.open("GET", "http://api.reimaginebanking.com/accounts/5dbf0dcc3c8c2216c9fcb801?key=e680b8d578f93a387542886b51a13234", false);
+								xhttp.send();
+
+
+								w.document.write(xhttp.responseText+" Thanks so much for donating to charity");
+								w.document.close(); // needed for chrome and safari
+							}
+							</script>
+					</div>
+				</div>
+			</section>
+			<!-- End banner Area -->	
+
+			<!-- Start convert Area -->
+			<section class="convert-area" id="convert">
+				<div class="container">
+					<div class="convert-wrap">
+						<div class="row justify-content-center align-items-center flex-column pb-30">
+							<h1 class="text-white">The Retirement Converter</h1>
+							<p class="text-white">Use this calculator to figure out how much investing this sum of money will add to your retirement account at maturity</p>
+						</div>
+						<div class="row justify-content-center align-items-start">
+							<div class="col-lg-2 cols-img">
+								<img class="d-block mx-auto" src="img/bitcoin.png" alt="">
+							</div>
+
+
+								<div class="col-lg-3 cols">
+									<input type="text" name="Current Age" placeholder="Current Age" id="curAge" class="form-control mb-20">
+									<input type="text" name="Retirement Age" placeholder="Retirement Age" id="retAge"class="form-control mb-20">
+									<a href="#" class="primary-btn">Invest in IRA right away</a>
+								</div>
+								<div class="col-lg-3 cols">
+									<input type="text" name="Money to Contribute Now" id="moneyNow" placeholder="Money to Contribute Now" class="form-control mb-20">
+									<input type="text" name="Money at maturity" placeholder="Money at maturity" id="moneyRet" class="form-control mb-20">
+									<a class="primary-btn header-btn text-uppercase mb-20"
+									onclick="calculate()">Calculate</a>
+								</div>
+
+							<script>
+								function calculate() {
+
+									var curAge = Number(document.getElementById("curAge").value);
+									var retAge = Number(document.getElementById("retAge").value);
+									var moneyNow = Number(document.getElementById("moneyNow").value);
+                					moneyRet = document.getElementById("moneyRet");
+
+									A = (moneyNow* Math.pow((1 + (7/(365*100))), (356*(retAge-curAge))));
+									moneyRet.value =  A.toFixed(2);
+								}
+							</script>
+						</div>						
+					</div>
+				</div>	
+			</section>
+			<!-- End convert Area -->
+			
+
+
+
+			<!-- Start price Area -->
+			<section class="price-area pt-100" id="price">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-60 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Buy these Curated Stocks we feel will beat the Market</h1>
+								<p>Using our advanced machine learning and data science models we recommend to buy one of these 3 stocks to ensure that your money works right for you</p>
+							</div>
+						</div>
+					</div>						
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="single-price no-padding">
+								<div class="price-top">
+									<h4>01 Ripple</h4>
+								</div>
+								<div class="price-bottom">
+									<h1><span>$</span> 7999</h1>
+									<a href="#" class="primary-btn header-btn">Execute Trade</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-price no-padding">
+								<div class="price-top">
+									<h4>02 Ethereum</h4>
+								</div>
+								<div class="price-bottom">
+									<h1><span>$</span> 9999</h1>
+									<a href="#" class="primary-btn header-btn">Execute Trade</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-price no-padding">
+								<div class="price-top">
+									<h4>03 Bitcoin</h4>
+								</div>
+								<div class="price-bottom">
+									<h1><span>$</span> 5999</h1>
+									<a href="#" class="primary-btn">Execute Trade</a>
+								</div>
+							</div>				
+						</div>								
+					</div>
+				</div>	
+			</section>
+			<!-- End price Area -->
+
+			<!-- start footer Area -->		
+			<footer class="footer-area section-gap">
+				<div class="container">
+					<div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+						<p class="footer-text m-0">
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</p>
+						<div class="footer-social d-flex align-items-center">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+							<a href="#"><i class="fa fa-behance"></i></a>
+						</div>
+					</div>
+				</div>
+			</footer>	
+			<!-- End footer Area -->
+
+			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="js/vendor/bootstrap.min.js"></script>			
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+  			<script src="js/easing.min.js"></script>			
+			<script src="js/hoverIntent.js"></script>
+			<script src="js/superfish.min.js"></script>	
+			<script src="js/jquery.ajaxchimp.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>	
+			<script src="js/owl.carousel.min.js"></script>			
+			<script src="js/jquery.sticky.js"></script>
+			<script src="js/jquery.nice-select.min.js"></script>			
+			<script src="js/parallax.min.js"></script>	
+			<script src="js/waypoints.min.js"></script>
+			<script src="js/jquery.counterup.min.js"></script>			
+			<script src="js/mail-script.js"></script>	
+			<script src="js/main.js"></script>	
+		</body>
+	</html>
+
+
+
